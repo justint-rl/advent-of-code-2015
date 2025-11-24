@@ -1,5 +1,4 @@
-mod solution;
-// Load module
+mod solution; // Load module
 
 use std::env;
 use crate::solution::not_quite_lisp::{part_1, part_2}; // reference for calling
