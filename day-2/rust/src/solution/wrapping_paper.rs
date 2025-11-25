@@ -1,10 +1,7 @@
 use crate::solution::model::dimension::Dimension;
 
 pub fn part_1(contents: &Vec<String>) -> Result<usize, String> {
-  let mut dimensions = Vec::new();
-  for dim in contents {
-    dimensions.push(Dimension::from_string(&dim))
-  }
+  let dimensions = parse_dimensions(contents);
   if dimensions.len() == 0 {
     return Ok(0);
   }
@@ -16,5 +13,21 @@ pub fn part_1(contents: &Vec<String>) -> Result<usize, String> {
 }
 
 pub fn part_2(contents: &Vec<String>) -> Result<usize, String> {
-  Ok(0)
+  let dimensions = parse_dimensions(contents);
+  if dimensions.len() == 0 {
+    return Ok(0);
+  }
+  let mut total_ribbon = 0;
+  for dim in dimensions {
+    total_ribbon += dim.total_ribbon();
+  }
+  Ok(total_ribbon)
+}
+
+fn parse_dimensions(contents: &Vec<String>) -> Vec<Dimension> {
+  let mut dimensions = Vec::new();
+  for dim in contents {
+    dimensions.push(Dimension::from_string(&dim))
+  }
+  dimensions
 }

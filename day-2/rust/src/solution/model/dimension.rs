@@ -1,3 +1,4 @@
+use std::arch::aarch64::vorn_u8;
 use std::cmp;
 
 pub struct Dimension {
@@ -41,5 +42,18 @@ impl Dimension {
     total_surface_area += (2 * self.length * self.height);
     total_surface_area += smallest_surface_area;
     total_surface_area
+  }
+
+  pub fn total_ribbon(self) -> usize {
+    let smallest_perimeter = cmp::min(
+      2 * self.length + 2 * self.width,
+      cmp::min(
+        2 * self.width + 2 * self.height,
+        2 * self.height + 2 * self.length,
+      )
+    );
+    let volume = self.width * self.height * self.length;
+    let total_ribbon = volume + smallest_perimeter;
+    total_ribbon
   }
 }
