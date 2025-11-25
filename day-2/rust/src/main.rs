@@ -17,6 +17,11 @@ use crate::solution::wrapping_paper::{part_1, part_2}; // reference for calling
 *   - Runtime: O(n) w. n is the number of dimensions in input file
 *   - Space: O(n) w. n is the number of dimensions to track. The algo is O(1) as we are tracking sum of surface area
 * Part 2:
+* - Same as part 1 but instead now you are computing the perimeter of each side and keep min
+* - Then add with the volume of the dimension
+* Complexity:
+*   - Runtime: O(n) w. n is the number of dimensions in input file
+*   - Space: O(n) w. n is the number of dimensions to track. The algo is O(1) as we are tracking sum of surface area
 * Question:
 *   - Can any of the dimension be negative?
 *   - Will the dimension always be in format of lxwxh?
