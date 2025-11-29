@@ -1,22 +1,21 @@
 # advent-of-code-2015
 Advent of code 2015 https://adventofcode.com/2015
 
-# Developer - Add New Day
+# Rust Developer - Add New Day
 1. `mkdir day-N/rust/`
 2. `cargo init`
 
-# How to Run a Day
+# Rust Developer - How to Run a Day
 1. mkdir input
 2. Add input txt files
 - sample.txt: sample input
 - input.txt: test input
 3. Run `cargo run`
 
-# Go Setup
+# Go Developer - Setup
 Project Structure
 advent-of-code-2015/
-├── WORKSPACE (or WORKSPACE.bazel)        # Root Bazel workspace file
-├── BUILD.bazel                            # Root BUILD file (optional)
+├── MODULE.bazel                            # Root BUILD file (optional)
 ├── go_libs/
 │   └── file_processor/
 │       ├── BUILD.bazel                    # Defines the go_library target
@@ -26,6 +25,8 @@ advent-of-code-2015/
     └── go/
         ├── BUILD.bazel                    # Defines the go_binary target
         └── main.go                        # Your solution
+
+# Go Developer - Add New
 
 Step-by-Step Setup
 1. WORKSPACE File (Root Level)
