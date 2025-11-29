@@ -1,6 +1,13 @@
 load("@rules_go//go:def.bzl", "go_library")
 
 go_library(
+    name = "not_quite_lisp",
+    srcs = ["not_quite_lisp.go"],
+    importpath = "github.com/justint-rl/advent-of-code-2015/day-1/not_quite_lisp",
+    visibility = ["//visibility:public"],
+)
+
+go_library(
     name = "solution",
     srcs = ["not_quite_lisp.go"],
     importpath = "github.com/justint-rl/advent-of-code-2015/day-1/go/solution",

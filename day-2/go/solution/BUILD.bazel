@@ -1,0 +1,17 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "wrapping_paper",
+    srcs = ["wrapping_paper.go"],
+    importpath = "github.com/justint-rl/advent-of-code-2015/day-2/go/wrapping_paper",
+    visibility = ["//visibility:public"],
+    deps = ["//day-2/go/model:dimension"],
+)
+
+go_library(
+    name = "solution",
+    srcs = ["wrapping_paper.go"],
+    importpath = "github.com/justint-rl/advent-of-code-2015/day-2/go/solution",
+    visibility = ["//visibility:public"],
+    deps = ["//day-2/go/model:dimension"],
+)

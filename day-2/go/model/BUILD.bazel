@@ -1,0 +1,15 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "dimension",
+    srcs = ["dimension.go"],
+    importpath = "github.com/justint-rl/advent-of-code-2015/day-2/go/model/dimension",
+    visibility = ["//visibility:public"],
+)
+
+go_library(
+    name = "model",
+    srcs = ["dimension.go"],
+    importpath = "github.com/justint-rl/advent-of-code-2015/day-2/go/model",
+    visibility = ["//visibility:public"],
+)
