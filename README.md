@@ -26,7 +26,7 @@ advent-of-code-2015/
         ├── BUILD.bazel                    # Defines the go_binary target
         └── main.go                        # Your solution
 
-# Go Developer - Add New
+# Go Developer - Add New Day
 
 Step-by-Step Setup
 1. WORKSPACE File (Root Level)
