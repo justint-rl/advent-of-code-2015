@@ -1,0 +1,18 @@
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+  name = "not_quite_lisp",
+  srcs = ["solution/not_quite_lisp.go"],
+  importpath = "github.com/justint-rl/advent-of-code-2015/day-1/not_quite_lisp",
+  visibility = ["//visibility:public"],
+)
+
+go_binary(
+  name = "day-1",
+  srcs = ["main.go"],
+  data = glob(["input/*.txt"]), # glob() specificies collection of files based on pattern
+  deps = [
+    "//go_libs:file_processor",
+    "//day-1/go:not_quite_lisp",
+  ],
+)
