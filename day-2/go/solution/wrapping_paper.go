@@ -30,5 +30,13 @@ func (w *wrappingPaperImpl) Part1(data []string) int64 {
 }
 
 func (w *wrappingPaperImpl) Part2(data []string) int64 {
-	return 0
+	totalRibbon := int64(0)
+	for _, d := range data {
+		dim, err := dimension.FromString(d)
+		if err != nil {
+			fmt.Println("Error converting string to Dimension", err)
+		}
+		totalRibbon += (dim.SmallestPerimeter() + dim.Volume())
+	}
+	return totalRibbon
 }

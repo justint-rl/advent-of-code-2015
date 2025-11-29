@@ -49,3 +49,15 @@ func (d Dimension) SmallestSideArea() int64 {
 		(d.Height * d.Length),
 	)
 }
+
+func (d Dimension) SmallestPerimeter() int64 {
+	return min(
+		(2*d.Length + 2*d.Width),
+		(2*d.Width + 2*d.Height),
+		(2*d.Height + 2*d.Length),
+	)
+}
+
+func (d Dimension) Volume() int64 {
+	return d.Length * d.Width * d.Height
+}
