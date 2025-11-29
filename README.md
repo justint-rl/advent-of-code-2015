@@ -27,6 +27,7 @@ advent-of-code-2015/
         └── main.go                        # Your solution
 
 # Go Developer - Add New Day
+- Run binary `bazel run //day-1/go:day-1`
 
 Step-by-Step Setup
 1. WORKSPACE File (Root Level)
