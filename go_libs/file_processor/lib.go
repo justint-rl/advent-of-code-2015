@@ -16,6 +16,10 @@ type FileProcessor interface {
 
 type fileProcessorImpl struct{}
 
+func New() FileProcessor {
+	return &fileProcessorImpl{}
+}
+
 func (f *fileProcessorImpl) LoadRaw(filePath string) string {
 	data, err := os.ReadFile(filePath)
 	if err != nil {
