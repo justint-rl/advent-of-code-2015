@@ -1,0 +1,19 @@
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "go_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/justint-rl/advent-of-code-2015/day-3/go",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//day-3/go/solution",
+        "//go_libs/file_processor",
+    ],
+)
+
+go_binary(
+    name = "day-3",
+    data = glob(["input/*.txt"]),  # glob() specificies collection of files based on pattern
+    embed = [":go_lib"],
+    visibility = ["//visibility:public"],
+)

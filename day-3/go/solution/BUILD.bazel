@@ -1,0 +1,9 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "solution",
+    srcs = ["house_visits.go"],
+    importpath = "github.com/justint-rl/advent-of-code-2015/day-3/go/solution",
+    visibility = ["//visibility:public"],
+    deps = ["//day-3/go/constants"],
+)
