@@ -2,13 +2,13 @@ load("@rules_go//go:def.bzl", "go_library", "go_test")
 
 go_library(
     name = "file_processor",
-    srcs = ["file_processor/lib.go"],
+    srcs = ["lib.go"],
     importpath = "github.com/justint-rl/advent-of-code-2015/go_libs/file_processor",
     visibility = ["//visibility:public"],
 )
 
 go_test(
     name = "file_processor_test",
-    srcs = ["file_processor/lib_test.go"],
+    srcs = ["lib_test.go"],
     embed = [":file_processor"],
 )

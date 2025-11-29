@@ -1,0 +1,11 @@
+load("@gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix github.com/justint-rl/advent-of-code-2015
+gazelle(name = "gazelle")
+
+# Run gofmt on all Go files
+gazelle(
+    name = "gofmt",
+    extra_args = ["-mode=fix"],
+    mode = "fix",
+)
