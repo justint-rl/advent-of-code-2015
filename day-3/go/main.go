@@ -27,6 +27,6 @@ func main() {
 	fmt.Printf("Part 1: %d\n", result1)
 
 	// Part 2
-	// result2 := hv.Part2(data)
-	// fmt.Printf("Part 2: %d\n", result2)
+	result2 := hv.Part2(data)
+	fmt.Printf("Part 2: %d\n", result2)
 }
