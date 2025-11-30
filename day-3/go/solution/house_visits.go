@@ -1,9 +1,8 @@
 package solution
 
 import (
-	"fmt"
-
 	constants "github.com/justint-rl/advent-of-code-2015/day-3/go/constants"
+	model "github.com/justint-rl/advent-of-code-2015/day-3/go/model"
 )
 
 type HouseVisits interface {
@@ -17,18 +16,20 @@ func New() HouseVisits {
 }
 
 func (h *houseVisitsImpl) Part1(route string) int64 {
-	visits := int64(0)
+	coordinatesVisited := make(map[model.Coordinate]struct{})
+	currentCoordinate := model.New(0, 0)
 	for _, direction := range route {
+		coordinatesVisited[currentCoordinate] = struct{}{}
 		switch constants.Direction(direction) {
 		case constants.North:
-			fmt.Println("Went north")
+			currentCoordinate = currentCoordinate.MoveUp(1)
 		case constants.South:
-			fmt.Println("Went south")
+			currentCoordinate = currentCoordinate.MoveDown(1)
 		case constants.West:
-			fmt.Println("Went west")
+			currentCoordinate = currentCoordinate.MoveLeft(1)
 		case constants.East:
-			fmt.Println("Went east")
+			currentCoordinate = currentCoordinate.MoveRight(1)
 		}
 	}
-	return visits
+	return int64(len(coordinatesVisited))
 }
